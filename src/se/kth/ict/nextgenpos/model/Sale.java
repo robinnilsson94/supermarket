@@ -81,6 +81,11 @@ public class Sale {
              obs.newItem(item); 
          } 
      } 
+     /**
+     * The specified observer will be notified when an item is registered.
+     * 
+     * @param observer The observer to notify. 
+     */
      public void addSuperMarketObserver(SuperMarketObserver obs) { 
          supermarketObservers.add(obs); 
      } 
