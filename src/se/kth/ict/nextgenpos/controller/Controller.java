@@ -5,6 +5,9 @@ import se.kth.ict.nextgenpos.model.Sale;
 import se.kth.ict.nextgenpos.model.Receipt;
 import se.kth.ict.nextgenpos.model.ProductCatalog;
 import se.kth.ict.nextgenpos.model.ProductSpecification;
+import se.kth.ict.nextgenpos.model.SuperMarketObserver;
+import java.util.List;
+import java.util.ArrayList;
 
 /**
  * The controller of the application. This is the sole controller, all calls to the
@@ -13,12 +16,15 @@ import se.kth.ict.nextgenpos.model.ProductSpecification;
 public class Controller {
     private Sale sale;
     private ProductCatalog catalog;
+    private List<SuperMarketObserver> superMarketObservers = new ArrayList<>();
 
     /**
      * Instantiates a new <code>Controller</code>.
      */
     public Controller() {
 	catalog = new ProductCatalog();
+       
+       
     }
     
     /**
@@ -74,5 +80,15 @@ public class Controller {
     public Receipt makePayment(int payedAmount) {
 	return sale.createReceipt(payedAmount);
     }
+     /** 
+      * The specified observer will be notified when a rental 
+      * has been paid. There will be notifications only for 
+      * rentals that are started after this method is called. 
+      * 
+      * @param obs The observer to notify. 
+      */ 
+    public void addSuperMarketObserver(SuperMarketObserver obs) {  
+        superMarketObservers.add(obs); 
+     } 
 
 }
