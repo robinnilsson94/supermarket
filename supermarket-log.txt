@@ -1,0 +1,7 @@
+2017-maj-17 00:02:19, Exception was thrown: No such item
+se.kth.ict.nextgenpos.model.ItemNotFoundException: No such item
+	at se.kth.ict.nextgenpos.model.ProductCatalog.findSpecification(ProductCatalog.java:34)
+	at se.kth.ict.nextgenpos.controller.Controller.enterItem(Controller.java:49)
+	at se.kth.ict.nextgenpos.view.View.enterItem(View.java:54)
+	at se.kth.ict.nextgenpos.view.View.test(View.java:36)
+	at se.kth.ict.nextgenpos.startup.Main.main(Main.java:15)
