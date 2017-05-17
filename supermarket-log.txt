@@ -1,7 +1,7 @@
-2017-maj-17 17:04:48, Exception was thrown: Item with itemid 10 couldn't be found.
+2017-maj-17 23:51:47, Exception was thrown: Item with itemid 10 couldn't be found.
 se.kth.ict.nextgenpos.model.ItemNotFoundException: Item with itemid 10 couldn't be found.
 	at se.kth.ict.nextgenpos.model.ProductCatalog.findSpecification(ProductCatalog.java:34)
-	at se.kth.ict.nextgenpos.controller.Controller.enterItem(Controller.java:49)
-	at se.kth.ict.nextgenpos.view.View.enterItem(View.java:55)
-	at se.kth.ict.nextgenpos.view.View.test(View.java:36)
+	at se.kth.ict.nextgenpos.controller.Controller.enterItem(Controller.java:56)
+	at se.kth.ict.nextgenpos.view.View.enterItem(View.java:56)
+	at se.kth.ict.nextgenpos.view.View.test(View.java:37)
 	at se.kth.ict.nextgenpos.startup.Main.main(Main.java:15)

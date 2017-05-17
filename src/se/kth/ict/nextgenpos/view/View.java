@@ -18,6 +18,7 @@ public class View {
      */
     public View(Controller cont)throws IOException  {
 	this.cont = cont;
+        cont.addSuperMarketObserver(new RegisteredItemsDisplay()); 
         this.logger = new LogHandler();
     }
 

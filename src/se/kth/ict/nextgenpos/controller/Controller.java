@@ -35,6 +35,7 @@ public class Controller {
      */
     public void makeNewSale() {
 	sale = new Sale();
+        sale.addSuperMarketObservers(superMarketObservers); 
     }
 
     /**
@@ -81,14 +82,13 @@ public class Controller {
 	return sale.createReceipt(payedAmount);
     }
      /** 
-      * The specified observer will be notified when a rental 
-      * has been paid. There will be notifications only for 
-      * rentals that are started after this method is called. 
+      * The specified observer will be notified when an item isregistered.  
       * 
       * @param obs The observer to notify. 
       */ 
     public void addSuperMarketObserver(SuperMarketObserver obs) {  
         superMarketObservers.add(obs); 
      } 
+    
 
 }

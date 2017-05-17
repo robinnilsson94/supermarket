@@ -8,9 +8,12 @@ import java.util.ArrayList;
  */
 public class Sale {
     private List<SalesLineItem> lineItems;
+    private List<SuperMarketObserver> supermarketObservers = new ArrayList<>(); 
     private int currentTotal;
     private int payedAmount;
     private int iterator;
+    private String item;
+   
 
     /**
      * Instantiates a new <code>Sale</code>.
@@ -29,6 +32,8 @@ public class Sale {
 	SalesLineItem lineItem = new SalesLineItem(spec, quantity);
 	lineItems.add(lineItem);
 	addToTotal(lineItem);
+        item = spec.toString();
+        notifyObservers(); 
     }
 
     private void addToTotal(SalesLineItem lineItem) {
@@ -70,4 +75,23 @@ public class Sale {
     int getPayedAmount() {
 	return payedAmount;
     }
+    
+     private void notifyObservers() {
+         for (SuperMarketObserver obs : supermarketObservers) { 
+             obs.newItem(item); 
+         } 
+     } 
+     public void addSuperMarketObserver(SuperMarketObserver obs) { 
+         supermarketObservers.add(obs); 
+     } 
+     /**
+     * All the specified observers will be notified when an item is registered.
+     * 
+     * @param observers The observers to notify. 
+     */
+    public void addSuperMarketObservers(List<SuperMarketObserver> observers) {
+        supermarketObservers.addAll(observers);
+    }
 }
+
+
