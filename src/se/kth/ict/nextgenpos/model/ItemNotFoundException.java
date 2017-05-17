@@ -8,10 +8,10 @@ public class ItemNotFoundException extends Exception {
  /**
      * Creates a new instance representing the condition described in the specified message.
      *
-     * @param msg A message that describes what went wrong.
+     * @param itemId The id nr.
      */
-    public ItemNotFoundException(String msg) {
-        super(msg);
+    public ItemNotFoundException(int itemId) {
+        super("Item with itemid " + itemId + " couldn't be found.");
     }
 
 }

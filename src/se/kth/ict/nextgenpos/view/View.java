@@ -38,7 +38,8 @@ public class View {
              try{
                 cont.enterItem(3,2);}
              catch (ItemNotFoundException infexc) {
-            handleException("Item wasn't found in the catalog.", infexc);System.out.println("");
+            handleException("Item wasn't found in the catalog.", infexc);
+            System.out.println("");
          }
         
         }
@@ -54,7 +55,8 @@ public class View {
             System.out.println("Result for item " + itemId + ": " + cont.enterItem(itemId, quantity));
         }
 	catch (ItemNotFoundException infexc) {
-            handleException("Item wasn't found in the catalog.", infexc);System.out.println("");
+            handleException("Item wasn't found in the catalog.", infexc);
+            System.out.println("");
         }
     }
     private void handleException(String uiMsg, Exception exc) {

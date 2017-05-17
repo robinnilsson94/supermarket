@@ -31,7 +31,7 @@ public class ProductCatalog {
      */
     public ProductSpecification findSpecification(int itemId) throws ItemNotFoundException  {
         if( products.get(itemId)==null){
-            throw new Exception(itemId);
+            throw new ItemNotFoundException(itemId);
         }
        
         return products.get(itemId);
